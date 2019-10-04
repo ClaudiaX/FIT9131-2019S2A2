@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Multiple
+comment0.text=\n\ Write\ a\ description\ of\ class\ Multiple\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Multiple()
+comment2.params=value
+comment2.target=Multiple(int)
+comment3.params=
+comment3.target=int\ getValue()
+comment4.params=value
+comment4.target=void\ setValue(int)
+numComments=5

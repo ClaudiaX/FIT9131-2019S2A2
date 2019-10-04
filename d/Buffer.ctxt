@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Buffer
+comment0.text=\n\ Write\ a\ description\ of\ class\ Buffer\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Buffer()
+comment2.params=list\ maxElements
+comment2.target=Buffer(java.util.ArrayList,\ int)
+comment3.params=
+comment3.target=java.util.ArrayList\ getList()
+comment4.params=list
+comment4.target=void\ setList(java.util.ArrayList)
+comment5.params=
+comment5.target=int\ getMaxElements()
+comment6.params=maxElements
+comment6.target=void\ setMaxElements(int)
+numComments=7
