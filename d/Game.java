@@ -25,7 +25,6 @@ public class Game
         this.b1 = new Buffer();
         this.b1.setMaxElements(5);
         this.mList = new ArrayList<>();
-        this.readFile();
     }
 
     public static void main(String[] args) {
@@ -40,10 +39,9 @@ public class Game
             playerName = sc.nextLine().trim();
         }
         b1.setMaxElements(5);
-
-        while (!endCheck()) {
+        this.readFile();
+        while (!endCheck()) 
             play();
-        }
     }
 
     public void play() {
@@ -60,33 +58,28 @@ public class Game
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-                split();
-                break;
+            split();
+            break;
             case 2:
-                merge();
-                break;
+            merge();
+            break;
         }
     }
 
-    //    move the number from the game total (t) and add it to the arraylist buffer (b1)
     public void split() {
         b1.getList().add(new Multiple(gameTotal));
     }
 
-    //    to merge the number in the game total box with a matching number in the arraylist at any position.
     public void merge() {
         boolean merge = false;
-        for (int i = 0; i < b1.getList().size(); i++) {
+        for (int i = 0; i < b1.getList().size(); i++) 
             if (b1.getList().get(i).getValue() == gameTotal) {
                 b1.getList().remove(i);
                 gameTotal += gameTotal;
                 merge = true;
             }
-        }
-        if (!merge) {
+        if (!merge) 
             System.out.println("No match value find, not able to merge");
-        }
-        //        back to point 4
         makeChoice();
     }
 
@@ -97,40 +90,34 @@ public class Game
 
     public String strNumbersInBuffer() {
         String bufferNumbers = "{";
-        for (int i = 0; i < b1.getList().size(); i++) {
+        for (int i = 0; i < b1.getList().size(); i++) 
             bufferNumbers += (" " + b1.getList().get(i).getValue());
-        }
         bufferNumbers += " }";
         return bufferNumbers;
     }
 
     public boolean endCheck() {
         boolean finish = true;
-        if (gameTotal < 256 && b1.getList().size() < b1.getMaxElements()) {
+        if (gameTotal < 256 && b1.getList().size() < b1.getMaxElements())
             finish = false;
-        } else if (gameTotal >= 256) {
+        else if (gameTotal >= 256) {
             System.out.println("You win the game!");
             writeFile();
             return true;
-        } else if (b1.getList().size() > b1.getMaxElements()) {
+        } else if (b1.getList().size() > b1.getMaxElements()) 
             finish = true;
-        } else {
-            for (int i = 0; i < b1.getMaxElements(); i++) {
-                if (b1.getList().get(i).getValue() == gameTotal) {
+        else 
+            for (int i = 0; i < b1.getMaxElements(); i++) 
+                if (b1.getList().get(i).getValue() == gameTotal) 
                     finish = false;
-                }
-            }
-        }
-        if (finish) {
+        if (finish) 
             System.out.println("You lose the game!");
-        }
         return finish;
     }
 
     public void readFile() {
         try {
             FileReader fileReader = new FileReader("multiples.txt");
-            System.out.println("Read file");
             Scanner sc = new Scanner(fileReader);
             String[] multipleLine = sc.nextLine().split(",");
             mList.add(new Multiple(Integer.parseInt(multipleLine[0])));
