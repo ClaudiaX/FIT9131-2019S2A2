@@ -6,8 +6,8 @@ package d;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Multiple
-{
+public class Multiple {
+
     private int value;
 
     public Multiple() {
